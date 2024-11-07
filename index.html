@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quotation - Maker</title>
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        padding: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+      }
+
+      table {
+        width: 100%;
+        font-size: large;
+      }
+
+      th {
+        padding: 3px;
+        border: 1px solid rgba(0, 0, 0, 0.232);
+        
+      }
+
+      tr {
+        padding: 3px;
+      }
+
+      td {
+        padding: 3px;
+        height: 36px;
+        text-align: center;
+        border: 1px solid rgba(0, 0, 0, 0.232);
+      }
+
+      input {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        font-size: 100%;
+      }
+      table {
+        table-layout: auto;
+      }
+      .qty {
+        width: 9%;
+      }
+
+      .price {
+        width: 9%;
+      }
+
+      .dis {
+        width: 5%;
+      }
+      tr td:nth-child(1),
+      tr th:nth-child(1) {
+        border: 1px solid rgba(0, 0, 0, 0.232);
+      }
+
+      /* Button */
+
+      /* CSS */
+      .button-84 {
+        align-items: center;
+        background-color: initial;
+        background-image: linear-gradient(#464d55, #25292e);
+        border-radius: 8px;
+        border-width: 0;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+          0 3px 6px rgba(0, 0, 0, 0.05);
+        box-sizing: border-box;
+        color: #fff;
+        cursor: pointer;
+        display: inline-flex;
+        flex-direction: column;
+        font-family: expo-brand-demi, system-ui, -apple-system,
+          BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+          "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol", "Noto Color Emoji";
+        font-size: 18px;
+        height: 52px;
+        justify-content: center;
+        line-height: 1;
+        margin: 0;
+        outline: none;
+        overflow: hidden;
+        padding: 0 32px;
+        text-align: center;
+        text-decoration: none;
+        transform: translate3d(0, 0, 0);
+        transition: all 150ms;
+        vertical-align: baseline;
+        white-space: nowrap;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+
+      .button-84:hover {
+        box-shadow: rgba(0, 1, 0, 0.2) 0 2px 8px;
+        opacity: 0.85;
+      }
+
+      .button-84:active {
+        outline: 0;
+      }
+
+      .button-84:focus {
+        box-shadow: rgba(0, 0, 0, 0.5) 0 0 0 3px;
+      }
+
+      @media (max-width: 420px) {
+        .button-84 {
+          height: 48px;
+        }
+      }
+
+      .box {
+        margin-top: 30px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+
+        margin-left: 45px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container" id="con">
+      <table id="table">
+        <tr>
+          <th></th>
+          <th>Item</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <th>Discount</th>
+          <th>Rate</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>3</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>4</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>5</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>6</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>7</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>8</td>
+          <td><input type="text" name="itemname" /></td>
+          <td>
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>9</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+
+        <tr>
+          <td>10</td>
+          <td><input type="text" name="itemname" /></td>
+          <td class="qty">
+            <input type="text" name="itemqty" onchange="totalbyqty(this)" />
+          </td>
+          <td class="price">
+            <input type="text" name="itemprice" onchange="totalbyprice(this)" />
+          </td>
+          <td class="dis">
+            <input type="text" name="itemdis" onchange="totalbydis(this)" />
+          </td>
+          <td><span></span></td>
+        </tr>
+      </table>
+
+      <div class="box">
+        <button
+          id="totalAmount"
+          type="button"
+          onclick="calculateSum()"
+          class="button-84"
+          role="button"
+        >
+          Total
+        </button>
+        <p
+          id="result"
+          style="
+            border: 1px solid rgba(128, 128, 128, 0.236);
+            border-radius: 12px;
+            color: green;
+            font-size: larger;
+            font-weight: 900;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px,
+              rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+            padding: 12px 27px;
+          "
+        ></p>
+      </div>
+    </div>
+
+    <script>
+      con = document.getElementById("con");
+      btn = document.getElementById("totalAmount");
+
+      function totalbyqty(element) {
+        itemQty =
+          element.parentElement.parentElement.children[2].children[0].value;
+        itemPrice =
+          element.parentElement.parentElement.children[3].children[0].value;
+        itemTotal = element.parentElement.parentElement.children[5].children[0];
+
+        qtytotal(itemQty, itemPrice);
+        function qtytotal(itemQty, itemPrice) {
+          let total = itemQty * itemPrice;
+
+          itemTotal.innerText = total;
+        }
+      }
+
+      function totalbydis(element) {
+        itemQty =
+          element.parentElement.parentElement.children[2].children[0].value;
+        itemPrice =
+          element.parentElement.parentElement.children[3].children[0].value;
+        itemDis =
+          element.parentElement.parentElement.children[4].children[0].value;
+        itemTotal = element.parentElement.parentElement.children[5].children[0];
+        qtytotal(itemQty, itemPrice, itemDis);
+        function qtytotal(itemQty, itemPrice, itemDis) {
+          let total = (itemQty * itemPrice * itemDis) / 100;
+          let finalAmount = itemQty * itemPrice - total;
+
+          itemTotal.innerText = finalAmount;
+        }
+      }
+      function totalbyprice(element) {
+        itemQty =
+          element.parentElement.parentElement.children[2].children[0].value;
+        itemPrice =
+          element.parentElement.parentElement.children[3].children[0].value;
+        itemTotal = element.parentElement.parentElement.children[5].children[0];
+
+        qtytotal(itemQty, itemPrice);
+        function qtytotal(itemQty, itemPrice) {
+          let total = itemQty * itemPrice;
+
+          itemTotal.innerText = total;
+        }
+      }
+
+      // function totalAmount() {
+
+      //     var table1 = document.getElementById('table');
+      //     sumVal = 0;
+
+      //     for (var i = 1; i < table1.rows.length; i++) {
+
+      //         console.log(table1.rows.length);
+      //         sumVal = sumVal + parseInt(table1.rows[i].cells[5].innerText);
+
+      //     }
+
+      // }
+      function calculateSum() {
+        const table = document.getElementById("table");
+        const rows = table.getElementsByTagName("tr");
+        let sum = 0;
+
+        // Start from 1 to skip the header row
+        for (let i = 1; i < rows.length; i++) {
+          const cells = rows[i].getElementsByTagName("td");
+          if (cells.length > 0) {
+            const value = parseFloat(cells[5].textContent); // Change index for different column
+            if (!isNaN(value)) {
+              sum += value;
+            }
+          }
+        }
+
+        document.getElementById("result").textContent = " " + sum;
+      }
+    </script>
+  </body>
+</html>
